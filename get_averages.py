@@ -24,15 +24,14 @@ for row in soup.table:
                 averages.append(float(data.text))
 
 # Create a tuple of the candidate and their average
-candidates_averages = zip(candidates, averages)
+candidates_and_averages = zip(candidates, averages)
 
 # Find the length of the longest name, we will use this to make
 # the data tabular when we print
 longest_str_length = len(max(candidates, key=len))
 
-for cand in candidates_averages:
-    candidate_name = cand[0]
-    candidate_average = cand[1]
+for entry in candidates_and_averages:
+    candidate_name, candidate_average = entry
 
     # Create a whitespace buffer to make the print tabular
     # The buffer is made based on the longest candidate's name
