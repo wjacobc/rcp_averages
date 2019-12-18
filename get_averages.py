@@ -44,4 +44,4 @@ for cand in candidates_averages:
     if candidate_average < 10:
         buf += " "
 
-    print(cand[0] + ": " + buf + str(cand[1]))
+    print(candidate_name + ": " + buf + str(candidate_average))
