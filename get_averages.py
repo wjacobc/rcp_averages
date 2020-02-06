@@ -12,15 +12,15 @@ for row in soup.table:
     if "header" in row["class"]:
        candidates = row.text.split(" ")
 
-       # Remove the "PollDate" from the first candidate
-       candidates[0] = candidates[0][8:]
+       # Remove the "PollDateSample" from the first candidate
+       candidates[0] = candidates[0][14:]
        # Remove the "Spread" category
        candidates.remove("Spread")
 
     # Find the RCP Average row
     if "RCP" in row.text:
         for data in row:
-            if " " not in data.text and "RCP" not in data.text:
+            if " " not in data.text and "RCP" not in data.text and "-" not in data.text:
                 averages.append(float(data.text))
 
 # Create a tuple of the candidate and their average
